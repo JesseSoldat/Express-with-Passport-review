@@ -27,4 +27,9 @@ module.exports = function(app, passport) {
 	app.get('/profile', function(req, res){
 		res.render('profile');
 	});
+
+	app.get('/logout', function(req, res){
+		req.logout();
+		res.redirect('/');
+	});
 };
