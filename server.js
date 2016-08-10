@@ -15,6 +15,8 @@ var configDB = require('./config/database.js');
 
 mongoose.connect(configDB.url);
 
+require('./config/passport')(passport);
+
 app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({
@@ -23,7 +25,7 @@ app.use(bodyParser.urlencoded({
 app.set('view engine', 'ejs');
 app.use(flash());
 
-require('./app/routes.js')(app);
+require('./app/routes.js')(app, passport);
 
 app.listen(port);
 
