@@ -14,6 +14,10 @@ module.exports = function(app, passport) {
 		failureRedirect: '/login'
 	}));
 
+	app.get('/signup', function(req, res){
+		res.render('signup');
+	});
+
 	app.get('/profile', function(req, res){
 		res.render('profile');
 	});
