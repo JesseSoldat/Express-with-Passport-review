@@ -13,6 +13,17 @@
 <div class="container">
 	<div class="page-header text-center"><h1><span class="fa fa-anchor">Profile Page</span></h1>
 	<a href="/logout" class="btn btn-default btn-sm">Logout</a>
+
+	<div class="row">
+		<div class="well">
+			<h3><span class="fa fa-user">Local</span></h3>
+			<p>
+				<strong>id: </strong><%= user._id %><br>
+				<strong>email: </strong><%= user.local.email %><br>
+				<strong>password: </strong><%= user.local.password %><br>
+			</p>
+		</div>
+	</div>
 	</div>
 </div>
 </body>
