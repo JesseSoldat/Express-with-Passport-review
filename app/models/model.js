@@ -8,5 +8,9 @@ var userSchema = mongoose.Schema({
 	}
 });
 
+userSchema.methods.generateHash = function(pass){
+	
+}
+
 
 module.exports = mongoose.model('User', userSchema);

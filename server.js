@@ -23,6 +23,13 @@ app.use(bodyParser.urlencoded({
 	extended: true
 }));
 app.set('view engine', 'ejs');
+app.use(session({
+	secret: 'jlab rocks',
+	resave: true,
+	saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(flash());
 
 require('./app/routes.js')(app, passport);

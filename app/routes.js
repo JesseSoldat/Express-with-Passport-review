@@ -18,6 +18,12 @@ module.exports = function(app, passport) {
 		res.render('signup');
 	});
 
+	app.post('/signup', passport.authenticate('local-signup', {
+		successRedirect: '/profile',
+		failureRedirect: '/signup',
+		failureFlash: true
+	}));
+
 	app.get('/profile', function(req, res){
 		res.render('profile');
 	});
